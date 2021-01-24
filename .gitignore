@@ -1,0 +1,5 @@
+﻿.idea
+.exercism
+.gradle
+build
+wrapper

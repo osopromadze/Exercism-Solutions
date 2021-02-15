@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 class LargestSeriesProductCalculator {
-    private String inputNumber;
+    private final String inputNumber;
 
     LargestSeriesProductCalculator(String inputNumber) {
         boolean hasAnyLetter = inputNumber.chars().anyMatch(Character::isLetter);
@@ -30,12 +30,10 @@ class LargestSeriesProductCalculator {
             long multiplicationResult = Arrays.stream(inputNumberArr)
                     .skip(index)
                     .limit(numberOfDigits)
-                    .mapToLong(Integer::new)
+                    .mapToLong(Long::new)
                     .reduce(1, (total, element) -> total * element);
 
-            if(multiplicationResult > result) {
-                result = multiplicationResult;
-            }
+            result = Math.max(result, multiplicationResult);
 
             index++;
         }

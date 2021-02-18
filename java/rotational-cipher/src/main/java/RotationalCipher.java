@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 class RotationalCipher {
@@ -15,7 +16,7 @@ class RotationalCipher {
                 .map(s -> s.charAt(0))
                 .map(ch -> {
                     if(!Character.isLetter(ch)) {
-                        return String.valueOf(ch);
+                        return ch;
                     }
 
                     int code = ch + shiftKey;
@@ -28,8 +29,9 @@ class RotationalCipher {
                         code -= 26;
                     }
 
-                    return String.valueOf((char) code);
+                    return (char) code;
                 })
+                .map(Objects::toString)
                 .collect(Collectors.joining());
     }
 

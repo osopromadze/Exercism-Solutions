@@ -5,3 +5,4 @@ build
 wrapper
 gradlew
 gradlew.bat
+python/*/__pycache__

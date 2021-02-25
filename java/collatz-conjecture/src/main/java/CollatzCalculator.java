@@ -1,6 +1,3 @@
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
 class CollatzCalculator {
 
     int computeStepCount(int start) {

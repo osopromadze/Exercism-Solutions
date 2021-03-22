@@ -20,21 +20,21 @@ class Matrix {
             List<Integer> rowList = values.get(row);
             Integer max = Collections.max(rowList);
 
-            for(int i = 0; i < rowList.size(); i++) {
-                Integer num = rowList.get(i);
+            for(int col = 0; col < rowList.size(); col++) {
+                Integer num = rowList.get(col);
 
                 if(num.equals(max)) {
                     List<Integer> colList = new ArrayList<>();
 
                     for(List<Integer> value : values) {
-                        colList.add(value.get(i));
+                        colList.add(value.get(col));
                     }
 
                     Integer min = Collections.min(colList);
 
                     for(Integer colNum : colList) {
                         if(num.equals(colNum) && num.equals(min)) {
-                            MatrixCoordinate matrixCoordinate = new MatrixCoordinate(row + 1, i + 1);
+                            MatrixCoordinate matrixCoordinate = new MatrixCoordinate(row + 1, col + 1);
 
                             result.add(matrixCoordinate);
                         }
